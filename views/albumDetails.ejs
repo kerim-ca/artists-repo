@@ -1,0 +1,22 @@
+
+<h1>Album: <%= album.album_name %> </h1>
+<p>Year: <%= album.album_year %></p>
+
+
+
+<h2>Songs</h2>
+<ul>
+    <% songs.forEach(song => { %>
+        <li><%= song.song_name %> (<%= song.duration %>)</li>
+    <% }); %>
+</ul>
+
+<h3>Add a New Song</h3>
+<form action="/songs/create" method="POST">
+    <input type="hidden" name="album_id" value="<%= album.id %>">
+    <label for="song_name">Song Name:</label>
+    <input type="text" id="song_name" name="song_name" required>
+    <label for="duration">Duration:</label>
+    <input type="time" id="duration" name="duration" required>
+    <button type="submit">Add Song</button>
+</form>

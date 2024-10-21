@@ -1,0 +1,17 @@
+<h3>Add a New Song</h3>
+
+
+<form action="/songs/create" method="POST">
+    <!-- Hidden field to pass the album ID -->
+    <input type="hidden" name="album_id" value="<%= album.id %>">
+
+    <!-- Input for the song name -->
+    <label for="song_name">Song Name:</label>
+    <input type="text" id="song_name" name="song_name" required>
+
+    <!-- Input for the song duration -->
+    <label for="duration">Duration:</label>
+    <input type="time" id="duration" name="duration" required>
+
+    <button type="submit">Add Song</button>
+</form>

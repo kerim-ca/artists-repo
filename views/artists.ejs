@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists</title>
+</head>
+<body>
+    <h1>Artists</h1>
+    <ul>
+        <% artists.forEach(artist => { %>
+            <li>
+                <a href="/artists/<%= artist.id %>"><%= artist.artist_name %></a> - <%= artist.genre %>
+            </li>
+        <% }); %>
+    </ul>
+
+    <a href="/artists/create">Add a new artist</a>
+</body>
+</html>
